@@ -14,14 +14,17 @@ module.exports.displayContactList = (req, res, next)=>{
         else
         {
             //return console.log(ContactList);
-            res.render('index', {title: 'Contact List', ContactList: contactList});
+            res.render('index', 
+            {title: 'Contact List', 
+            ContactList: contactList, 
+            displayName: req.user ? req.user.displayName : ''});
         }
 
-    });
+    }).sort({ Name: 'desc'});
 }
 
 module.exports.displayAddPage = (req,res,next) =>{
-    res.render('index', {title: 'Contact Add'});
+    res.render('index', {title: 'Contact Add', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.processAddPage = (req,res,next) =>{
@@ -55,7 +58,7 @@ module.exports.displayEditPage = (req,res,next) =>{
         }
         else 
         {
-            res.render('index', {title: 'Edit Contact',  ContactList: contactToEdit});
+            res.render('index', {title: 'Edit Contact',  ContactList: contactToEdit, displayName: req.user ? req.user.displayName : ''});
         }
     });
 }

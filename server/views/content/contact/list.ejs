@@ -1,18 +1,27 @@
 <div class="row">
     <div class="offeset-md-1 col-md-10">
+    <% if(typeof displayName == 'string' && displayName) { %>
         <a href="/contact-list/add" class="btn btn-primary" role = "button">
         <i class="fas fa-plus-circle"></i> Add a Contact
         </a>
+        <% } %>
         <table class="table table-bordered table-striped table-hover">
             <tr class = "d-flex">
+                <% if(typeof displayName == 'string' && displayName) { %>
                 <th class = "text-center col-2">Name</th>
                 <th class = "text-center col-2">Contact Number</th>
                 <th class = "text-center col-4">Email Address</th>
                 <th class = "text-center col-2"></th>
                 <th class = "text-center col-2"></th>
+                <% } else {%>
+                    <th class = "text-center col-4">Name</th>
+                    <th class = "text-center col-4">Contact Number</th>
+                    <th class = "text-center col-4">Email Address</th>
+                <% } %>
             </tr>
             <% for(let count = 0; count < ContactList.length; count++) { %>
                 <tr class = "d-flex">
+                    <% if(typeof displayName == 'string' && displayName) { %>
                     <td class = "text-center col-2"><%= ContactList[count].Name %></td>
                     <td class = "text-center col-2"><%= ContactList[count].Contact_Number %></td>
                     <td class = "text-center col-4"><%= ContactList[count].Email_Address %></td>
@@ -24,6 +33,11 @@
                         <a href="/contact-list/delete/<%= ContactList[count]._id%>" class="btn btn-danger">
                         <i class="fas fa-trash-alt"></i> Delete</a>
                     </td>
+                    <% } else {%>
+                    <td class = "text-center col-4"><%= ContactList[count].Name %></td>
+                    <td class = "text-center col-4"><%= ContactList[count].Contact_Number %></td>
+                    <td class = "text-center col-4"><%= ContactList[count].Email_Address %></td>
+                    <% } %>
                 </tr>
             <%} %>
         </table>
