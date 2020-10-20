@@ -1,0 +1,48 @@
+<!-- Hyunjune Shin-->
+<!-- INDEX-->
+<%- include partials/header.ejs %>
+
+<%- include partials/main_navs.ejs %>
+
+  <!-- Main Content-->
+  <main class="container">
+
+  <!-- img for the banner-->
+  <img id = "banner" class = "banner" src="/Assets/images/banner.jpg" alt="banner">
+    
+    <div id = "box" class="jumbotron">
+
+    <!-- Title of each part of the site -->
+    <h1 class="display-4"><%= title %> </h1>
+    <hr>
+    <!-- BRINGS THE CONTENT-->
+    <% if (title == "Home") { %>
+      <%- include content/home.ejs %>
+    <%}%>
+    <% if (title == "About Me") {%>
+      <%- include content/about.ejs %>
+    <% }%>
+    <% if (title == "Projects") {%>
+      <%- include content/projects.ejs %>
+    <% }%>
+    <% if (title == "Services") {%>
+      <%- include content/services.ejs %>
+    <% }%>
+    <% if (title == "Contact") {%>
+      <%- include content/contact.ejs %>
+    <% }%>
+    <% if (title == "Contact List") { %>
+      <%- include content/contact/list.ejs %>
+    <%}%>
+    <% if (title == "Edit Contact") { %>
+      <%- include content/contact/edit.ejs %>
+    <%}%>
+    <% if (title == "Contact Add") { %>
+      <%- include content/contact/add.ejs %>
+    <%}%>
+    
+    </div>
+  </main>
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs%>

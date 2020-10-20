@@ -1,0 +1,73 @@
+/*custom css goes here*/
+#logo
+{
+  width: 10%;
+}
+#banner
+{
+  margin-top: 2em;
+  width:100%;
+}
+#box{
+  margin-bottom: 10em;
+}
+#description
+{
+  margin-top: 1em;
+  text-align: center;
+}
+.description_p
+{
+  margin-left: 6em;
+  margin-right: 6em;
+  margin-top: 1em;
+  text-align: justify ;
+}
+#selfie
+{
+  display:block;
+  margin-left:auto;
+  margin-right: auto;
+  width:20%;
+
+}
+.pic1
+{
+  display: block; 
+  width: 60%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+fieldset{
+  margin:0em;
+  border: 0.2em solid black;
+  padding:1em;
+}
+td{
+  padding:0.75em;
+}
+#project1
+{
+  display:block;
+  margin-left:auto;
+  margin-right: auto;
+  width:70%;
+}
+#project2
+{
+  display:block;
+  margin-left:auto;
+  margin-right: auto;
+  width:70%;
+}
+#project3
+{
+  display:block;
+  margin-left:auto;
+  margin-right: auto;
+  width:70%;
+}
+body{
+background-color:#D3D3D3;
+font-family: Verdana, Geneva, sans-serif;
+}
