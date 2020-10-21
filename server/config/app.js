@@ -1,3 +1,4 @@
+//Hyunjune Shin 301099013 2020-10-20
 //installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
@@ -43,7 +44,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-//set express session
+//setup express session
 app.use(session({
   secret: "SomeSecret",
   saveUninitialized: false,
@@ -66,7 +67,7 @@ let User = userModel.User;
 //implement a User Authentication Strategy
 passport.use(User.createStrategy());
 
-//serialize and deserialize the User ingo
+//serialize and deserialize the User info
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

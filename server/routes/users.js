@@ -1,3 +1,6 @@
+//Hyunjune Shin 301099013 2020-10-20
+//routing for user page
+
 var express = require('express');
 var router = express.Router();
 

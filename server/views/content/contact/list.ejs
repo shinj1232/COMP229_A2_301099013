@@ -1,5 +1,9 @@
+<!-- Hyunjune Shin 301099013 2020-10-20 -->
+<!-- Content for Buisness contact list page -->
 <div class="row">
     <div class="offeset-md-1 col-md-10">
+
+    <!-- If the user is logged in show add contact credentials -->
     <% if(typeof displayName == 'string' && displayName) { %>
         <a href="/contact-list/add" class="btn btn-primary" role = "button">
         <i class="fas fa-plus-circle"></i> Add a Contact
@@ -7,6 +11,7 @@
         <% } %>
         <table class="table table-bordered table-striped table-hover">
             <tr class = "d-flex">
+            <!-- If the user is logged in show these coloumns-->
                 <% if(typeof displayName == 'string' && displayName) { %>
                 <th class = "text-center col-2">Name</th>
                 <th class = "text-center col-2">Contact Number</th>
@@ -14,13 +19,16 @@
                 <th class = "text-center col-2"></th>
                 <th class = "text-center col-2"></th>
                 <% } else {%>
+                    <!-- If the user is not logged in -->
                     <th class = "text-center col-4">Name</th>
                     <th class = "text-center col-4">Contact Number</th>
                     <th class = "text-center col-4">Email Address</th>
                 <% } %>
             </tr>
+            <!-- Display all the data -->
             <% for(let count = 0; count < ContactList.length; count++) { %>
                 <tr class = "d-flex">
+                    <!-- If the user is logged in show these contents-->
                     <% if(typeof displayName == 'string' && displayName) { %>
                     <td class = "text-center col-2"><%= ContactList[count].Name %></td>
                     <td class = "text-center col-2"><%= ContactList[count].Contact_Number %></td>
@@ -34,6 +42,7 @@
                         <i class="fas fa-trash-alt"></i> Delete</a>
                     </td>
                     <% } else {%>
+                    <!-- If the user is not logged in show these contents-->
                     <td class = "text-center col-4"><%= ContactList[count].Name %></td>
                     <td class = "text-center col-4"><%= ContactList[count].Contact_Number %></td>
                     <td class = "text-center col-4"><%= ContactList[count].Email_Address %></td>

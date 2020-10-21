@@ -1,3 +1,4 @@
+//Hyunjune Shin 301099013
 let mongoose = require('mongoose');
 
 //create a model class

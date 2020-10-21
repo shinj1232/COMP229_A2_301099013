@@ -1,15 +1,24 @@
-<%- include ../partials/header.ejs %>
+<!-- Hyunjune Shin 301099013 2020-10-20-->
+<!-- Login page-->
 
+<!-- Header-->
+<%- include ../partials/header.ejs %>
+<!-- Nav -->
 <%- include ../partials/main_navs.ejs %>
+
+<!-- Err message-->
 <%if(message.length > 0) {%>
     <div class="alert alert-danger">
         <%= message %>
     </div>
 <% } %>
 
+<!-- Content -->
 <div class="row">
     <div class="offset-md-4 col-md-4">
         <h1>Please Login</h1>
+        
+        <!-- login Form-->
         <form method="POST" autocomplete="off">
             <fieldset class="form-group">
                 <label for="username">Username: </label>
@@ -32,6 +41,7 @@
         </form>
     </div>
 </div>
-
+<!-- Bottom Nav-->
 <%- include ../partials/bottom_nav.ejs %>
+<!-- Bottom part of html-->
 <%- include ../partials/footer.ejs%>

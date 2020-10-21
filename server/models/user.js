@@ -1,4 +1,5 @@
-//require modules for the usermodel
+//Hyunjune Shin 301099013
+//require user module
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
 
@@ -12,15 +13,6 @@ let User = mongoose.Schema
             trim: true,
             required: 'username is required'
         },
-        /*
-        password:
-        {
-            type: String,
-            default: '';
-            trime: true,
-            required: 'password is required'
-        }
-         */
         email:
         {
             type: String,

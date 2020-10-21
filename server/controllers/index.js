@@ -1,3 +1,5 @@
+//Hyunjune Shin 301099013
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -7,22 +9,27 @@ let passport = require('passport');
 let userModel = require('../models/user');
 let user = userModel.User; // alias
 
+//display the homepage
 module.exports.displayHomePage = (req, res, next) => {
     res.render('index', {title: 'Home', displayName: req.user ? req.user.displayName : ''});
 }
-
+//diplay about page
 module.exports.displayAboutPage = (req, res, next) => {
     res.render('index', { title: 'About Me', displayName: req.user ? req.user.displayName : '' });
 }
+//display project page
 module.exports.displayProjectPage = (req, res, next) => {
     res.render('index', { title: 'Projects', displayName: req.user ? req.user.displayName : '' });
 }
+//display service page
 module.exports.displayServicePage = (req, res, next) => {
     res.render('index', { title: 'Services', displayName: req.user ? req.user.displayName : '' });
 }
+//display service page
 module.exports.displayServicePage = (req, res, next) => {
     res.render('index', { title: 'Services', displayName: req.user ? req.user.displayName : '' });
 }
+//display loging page
 module.exports.displayLoginPage = (req,res, next) => {
     //check if the user is aready logged in
     if(!req.user)
@@ -39,7 +46,7 @@ module.exports.displayLoginPage = (req,res, next) => {
         return res.redirect('/');
     }
 }
-
+//process loging page
 module.exports.processLoginPage = (req, res, next) => {
     passport.authenticate('local', 
     (err, user, info) =>{
@@ -60,12 +67,14 @@ module.exports.processLoginPage = (req, res, next) => {
             {
                 return next(err);
             }
+            //when the user loges in the take to contact-list page
             return res.redirect('/contact-list');
         });
 
     })(req, res, next);
 }
 
+//display register page
 module.exports.displayRegisterPage = (req, res, next) =>{
     //check if the user is not aready logged in
     if(!req.user)
@@ -82,6 +91,7 @@ module.exports.displayRegisterPage = (req, res, next) =>{
     }
 }
 
+//process register page
 module.exports.processRegisterPage = (req, res, next) => {
     //instantiate a user obj 
     let newUser = new userModel.User({
@@ -118,7 +128,7 @@ module.exports.processRegisterPage = (req, res, next) => {
         }
     });
 }
-
+// process log out
 module.exports.performLogout = (req, res, next) => {
     req.logout();
     res.redirect('/contact-list');

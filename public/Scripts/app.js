@@ -1,10 +1,14 @@
-// IIFE -- Immediately Invoked Function Expression
+//Hyunjune Shin 301099013 2020-10-20
+//App java script page
 
+// IIFE -- Immediately Invoked Function Expression
 (function(){
 
     function Start()
     {
         console.log("app started...");
+        
+        //when the user ever tries to delete the contact-list if gives the user a warning
         let deleteButtons = document.querySelectorAll('.btn-danger')
         for (button of deleteButtons)
         {
@@ -16,6 +20,8 @@
                 }
             });
         }
+        
+        //contact page if the user is submitting 
         if(document.title == "Contact"){
             let sendButton = document.getElementById("submitbutton");
             let cancelButton = document.getElementById("cancel");
@@ -38,7 +44,7 @@
                 form.reset();
 
             });
-
+            //from contact page if the user clicks the cancel button
             cancelButton.addEventListener("click", (event) => {
                 event.preventDefault();
                 if(confirm("are you sure?"))
