@@ -9,6 +9,7 @@ let Contact = require('../models/contact');
 // display contact list to contact-list page
 module.exports.displayContactList = (req, res, next)=>{
 
+
     //check if there is an error
     Contact.find((err, contactList) =>{
         if(err)
@@ -25,7 +26,7 @@ module.exports.displayContactList = (req, res, next)=>{
             displayName: req.user ? req.user.displayName : ''});
         }
     // sorting the buisness contact list in alphabetical order
-    }).sort({ Name: 'desc'});
+    }).collation({locale:'en',strength: 2}).sort({Name:1});
 }
 
 //displaying the page to add the contact list

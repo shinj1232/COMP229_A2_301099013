@@ -1,4 +1,4 @@
-//Hyunjune Shin 301099013
+//Hyunjune Shin
 let mongoose = require('mongoose');
 
 //create a model class
@@ -10,5 +10,6 @@ let contactModel = mongoose.Schema({
 {
     collection: "business_contact"
 });
+
 
 module.exports = mongoose.model('Contact', contactModel);
